@@ -1,0 +1,6 @@
+{
+  "appTitle": "test français",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
