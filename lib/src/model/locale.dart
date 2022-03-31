@@ -3,54 +3,38 @@ import 'package:flutter/material.dart';
 class LocaleModel extends ValueNotifier<Locale> {
   LocaleModel(Locale defaultLocale) : super(defaultLocale);
 
-  static convertLangNameToLocale(String langNameToConvert) {
-    Locale convertedLocale;
-
+  static Locale convertLangNameToLocale(String langNameToConvert) {
     switch (langNameToConvert) {
       case 'English':
-        convertedLocale = const Locale('en', 'EN');
-        break;
+        return const Locale('en', 'EN');
       case 'Français':
-        convertedLocale = const Locale('fr', 'FR');
-        break;
+        return const Locale('fr', 'FR');
       case 'Español':
-        convertedLocale = const Locale('es', 'ES');
-        break;
+        return const Locale('es', 'ES');
       case 'Русский':
-        convertedLocale = const Locale('ru', 'RU');
-        break;
+        return const Locale('ru', 'RU');
       default:
-        convertedLocale = const Locale('en', 'EN');
+        return const Locale('en', 'EN');
     }
-
-    return convertedLocale;
   }
 
-  static convertLocaleToLangName(String localeToConvert) {
-    String langName;
-
+  static String convertLocaleToLangName(String localeToConvert) {
     switch (localeToConvert) {
       case 'en':
-        langName = "English";
-        break;
+        return "English";
       case 'fr':
-        langName = "Français";
-        break;
+        return "Français";
       case 'es':
-        langName = "Español";
-        break;
+        return "Español";
       case 'ru':
-        langName = "Русский";
-        break;
+        return "Русский";
       default:
-        langName = "English";
+        return "English";
     }
-
-    return langName;
   }
 
-  getLocale() => value;
-  setLocale(Locale locale) {
+  Locale getLocale() => value;
+  void setLocale(Locale locale) {
     value = locale;
   }
 }
